@@ -1,0 +1,36 @@
+<html> 
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/united/bootstrap.min.css">
+
+<script>var value = 'otpauth://totp/Microsoft:user%40outlook.com?secret=AAAABBBBCCCCDDDD'; </script>
+<body>
+
+<div class="row">
+  <div class="col-md-6">
+		<p>GPL License: https://github.com/neocotic/qr.js/</p>
+			<canvas id="neocotic-qr-code"></canvas>
+			<script src="qr.min.js"></script>
+			<script> qr.canvas({ 
+				canvas: document.getElementById('neocotic-qr-code'), 
+				value: value,
+				level: 'H', size: 10
+			}); </script>
+  </div>
+  <div class="col-md-6">
+		<p>MIT License: https://github.com/davidshimjs/qrcodejs</p>
+			<div id="davidshimjs-qrcodejs"></div>
+			<script src="qrcode.min.js"></script>
+			<script type="text/javascript">
+				new QRCode(document.getElementById("davidshimjs-qrcodejs"), {
+				    text: value,
+				    width: 256, height: 256,
+				    colorDark : "#000000", colorLight : "#ffffff",
+				    correctLevel : QRCode.CorrectLevel.H
+				});
+			</script>
+  </div>
+</div>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
